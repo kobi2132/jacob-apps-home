@@ -1,0 +1,9 @@
+# Add to /srv/proxy/Caddyfile, then reload Caddy.
+jacob-apps.co.il, www.jacob-apps.co.il {
+	handle /api/* {
+		reverse_proxy home-contact:3000
+	}
+	handle {
+		reverse_proxy home:80
+	}
+}
