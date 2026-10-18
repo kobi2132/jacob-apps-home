@@ -29,8 +29,8 @@
     "subdomain": "turkli",
     "description": "לומדים לקרוא, לשיר ולדבר טורקית מדוברת מעברית, צעד אחר צעד.",
     "category": "לימוד",
-    "status": "display",
-    "badge": "בקרוב"
+    "status": "active",
+    "icon": "https://turkli.jacob-apps.co.il/icon-512.png"
   },
   {
     "name": "הטיול לפיליפינים",
