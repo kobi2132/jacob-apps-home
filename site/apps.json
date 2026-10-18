@@ -1,0 +1,44 @@
+[
+  {
+    "name": "אקורדי",
+    "subdomain": "akordi",
+    "description": "כותבים ושומרים שירים עם אקורדים, בעברית ובאנגלית, ומגבים אותם לגוגל דרייב.",
+    "category": "כלי עבודה",
+    "status": "active",
+    "icon": "https://akordi.jacob-apps.co.il/icons/icon-512.png"
+  },
+  {
+    "name": "לומדלי",
+    "subdomain": "lumdeli",
+    "url": "https://kobi2132.github.io/lumda/",
+    "description": "משחקי לימוד לילדים באנגלית, מספרים וחשבון, עם דמות אישית לכל ילד.",
+    "category": "משחק",
+    "status": "active",
+    "icon": "https://kobi2132.github.io/lumda/logo-512.png"
+  },
+  {
+    "name": "תרפי",
+    "subdomain": "tarpi",
+    "description": "זימון תורים אונליין לקוסמטיקאית: הלקוחות קובעות תור, והיא מנהלת את היומן.",
+    "category": "כלי עבודה",
+    "status": "display",
+    "badge": "בקרוב"
+  },
+  {
+    "name": "turkLi טורקית מדוברת",
+    "subdomain": "turkli",
+    "description": "לומדים לקרוא, לשיר ולדבר טורקית מדוברת מעברית, צעד אחר צעד.",
+    "category": "לימוד",
+    "status": "display",
+    "badge": "בקרוב"
+  },
+  {
+    "name": "הטיול לפיליפינים",
+    "url": "https://kobi2132.github.io/philippines-trip/",
+    "description": "כל מה שצריך לטיול בפיליפינים: טיסות, מלונות, מעברים והמלצות לכל יום, גם בלי אינטרנט.",
+    "category": "טיולים",
+    "status": "display",
+    "badge": "פרטי",
+    "icon": "https://kobi2132.github.io/philippines-trip/icons/icon-512.png"
+  }
+]

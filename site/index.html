@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>האפליקציות של יעקב</title>
+  <meta name="description" content="אפליקציות קטנות שבניתי לשימוש יומיומי. כל אחת בכתובת משלה תחת jacob-apps.co.il.">
+  <meta property="og:title" content="האפליקציות של יעקב">
+  <meta property="og:description" content="אפליקציות קטנות שבניתי לשימוש יומיומי.">
+  <meta property="og:url" content="https://jacob-apps.co.il/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>האפליקציות של יעקב</h1>
+      <p class="lead">אפליקציות קטנות שבניתי כדי לפתור בעיות אמיתיות. כל אחת יושבת בכתובת משלה תחת <bdi>jacob-apps.co.il</bdi>.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#apps">לאפליקציות</a>
+        <a class="btn btn-ghost" href="#contact">לשלוח לי הודעה</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="apps" class="wrap">
+      <h2>אפליקציות</h2>
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <section id="contact" class="wrap">
+      <h2>צור קשר</h2>
+      <p class="muted">רעיון, באג, או סתם שלום? ההודעה מגיעה אליי ישירות.</p>
+      <form id="contact-form" class="card form" novalidate>
+        <label>שם
+          <input name="name" maxlength="80" required autocomplete="name">
+        </label>
+        <label>איך לחזור אליך (מייל או טלפון)
+          <input name="reply" maxlength="120" autocomplete="email">
+        </label>
+        <label>נושא
+          <select name="topic" id="topic"><option>כללי</option></select>
+        </label>
+        <label>הודעה
+          <textarea name="message" rows="5" maxlength="2000" required></textarea>
+        </label>
+        <label class="hp" aria-hidden="true">אתר
+          <input name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <button class="btn" type="submit">שליחה</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <a href="https://github.com/kobi2132" target="_blank" rel="noopener">GitHub</a>
+    <span>© <span id="year"></span> jacob-apps.co.il</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
