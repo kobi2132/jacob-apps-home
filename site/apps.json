@@ -9,12 +9,11 @@
   },
   {
     "name": "לומדלי",
-    "subdomain": "lumdeli",
-    "url": "https://kobi2132.github.io/lumda/",
+    "subdomain": "lomedly",
     "description": "משחקי לימוד לילדים באנגלית, מספרים וחשבון, עם דמות אישית לכל ילד.",
     "category": "משחק",
     "status": "active",
-    "icon": "https://kobi2132.github.io/lumda/logo-512.png"
+    "icon": "https://lomedly.jacob-apps.co.il/logo-512.png"
   },
   {
     "name": "תרפי",
