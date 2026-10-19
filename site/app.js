@@ -20,22 +20,23 @@ function iconFor(app) {
   return img;
 }
 
-function card(app) {
-  const url = appUrl(app);
-  const open = app.status === 'active' && url;
-  const root = el('article', { class: `card app${open ? '' : ' is-off'}` });
+function isOpen(app) {
+  return app.status === 'active' && !!appUrl(app);
+}
 
-  const head = el('div', { class: 'app-head' });
+function row(app) {
+  const open = isOpen(app);
+  const root = el('article', { class: `app${open ? '' : ' is-off'}` });
+
   const titles = el('div');
   titles.append(el('h3', {}, app.name));
   if (app.category) titles.append(el('div', { class: 'category' }, app.category));
-  head.append(iconFor(app), titles);
-  root.append(head);
+  root.append(iconFor(app), titles);
 
   if (open) {
-    root.append(el('a', { class: 'btn', href: url, target: '_blank', rel: 'noopener' }, 'פתח'));
+    root.append(el('a', { class: 'pill', href: appUrl(app), target: '_blank', rel: 'noopener' }, 'פתח'));
   } else {
-    root.append(el('span', { class: 'btn btn-off', 'aria-disabled': 'true' }, app.badge || 'לא זמין'));
+    root.append(el('span', { class: 'pill', 'aria-disabled': 'true' }, app.badge || 'לא זמין'));
   }
 
   root.append(el('p', { class: 'desc' }, app.description || ''));
@@ -43,18 +44,25 @@ function card(app) {
 }
 
 async function loadApps() {
-  const grid = document.getElementById('grid');
+  const openList = document.getElementById('open-list');
   try {
     const res = await fetch('apps.json', { cache: 'no-cache' });
     const apps = (await res.json()).filter(a => a.status !== 'hidden');
-    // Openable apps first, keeping file order within each group.
-    apps.sort((a, b) => (b.status === 'active') - (a.status === 'active'));
-    grid.replaceChildren(...apps.map(card));
+    const open = apps.filter(isOpen);
+    const more = apps.filter(a => !isOpen(a));
+
+    openList.replaceChildren(...open.map(row));
+    document.getElementById('more-list').replaceChildren(...more.map(row));
+    document.getElementById('count').textContent = apps.length;
+    document.getElementById('n-open').textContent = open.length;
+    document.getElementById('n-more').textContent = more.length;
+    document.getElementById('apps').hidden = !open.length;
+    document.getElementById('more').hidden = !more.length;
 
     const topic = document.getElementById('topic');
     for (const a of apps) topic.append(el('option', {}, a.name));
   } catch {
-    grid.textContent = 'לא הצלחתי לטעון את רשימת האפליקציות.';
+    openList.textContent = 'לא הצלחתי לטעון את רשימת האפליקציות.';
   }
 }
 
