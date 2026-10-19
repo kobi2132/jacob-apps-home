@@ -9,6 +9,7 @@
   <meta property="og:description" content="אפליקציות קטנות שבניתי לשימוש יומיומי.">
   <meta property="og:url" content="https://jacob-apps.co.il/">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jacob-apps.co.il/profile.jpg">
   <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -22,7 +23,10 @@
 
   <div class="wrap">
     <header class="profile">
-      <div class="avatar" aria-hidden="true">י</div>
+      <picture class="avatar">
+        <source srcset="profile.webp" type="image/webp">
+        <img src="profile.jpg" alt="יעקב" width="400" height="400">
+      </picture>
       <div class="who">
         <h1>יעקב</h1>
         <div class="sub">מפתח · <span id="count">0</span> אפליקציות</div>

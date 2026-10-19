@@ -54,11 +54,10 @@ bdi { white-space: nowrap; }
   width: 128px; height: 128px; flex: none;
   border-radius: 50%;
   border: 5px solid var(--bg);
-  background: linear-gradient(135deg, #1c1c1e, #4a4a52);
-  color: #fff;
-  display: grid; place-items: center;
-  font-size: 3.4rem; font-weight: 800;
+  overflow: hidden;
+  background: var(--soft);
 }
+.avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .who { flex: 1; padding-bottom: 10px; }
 .profile h1 { font-size: 2rem; font-weight: 800; }
 .sub { color: var(--muted); }
@@ -143,7 +142,7 @@ bdi { white-space: nowrap; }
 @media (max-width: 600px) {
   .cover { height: 130px; }
   .profile { margin-top: -56px; flex-direction: column; align-items: flex-start; gap: 10px; }
-  .avatar { width: 104px; height: 104px; font-size: 2.8rem; }
+  .avatar { width: 104px; height: 104px; }
   .who { padding: 0; }
   .app { grid-template-columns: 60px 1fr auto; padding: 14px; }
   .app-icon { width: 60px; height: 60px; border-radius: 14px; }
