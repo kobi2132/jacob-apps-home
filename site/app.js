@@ -24,23 +24,40 @@ function isOpen(app) {
   return app.status === 'active' && !!appUrl(app);
 }
 
+function hostOf(app) {
+  try { return new URL(appUrl(app)).host; } catch { return ''; }
+}
+
 function row(app) {
   const open = isOpen(app);
-  const root = el('article', { class: `app${open ? '' : ' is-off'}` });
+  const root = open
+    ? el('a', { class: 'app', href: appUrl(app), target: '_blank', rel: 'noopener' })
+    : el('div', { class: 'app is-off' });
 
-  const titles = el('div');
-  titles.append(el('h3', {}, app.name));
-  if (app.category) titles.append(el('div', { class: 'category' }, app.category));
-  root.append(iconFor(app), titles);
+  const body = el('div', { class: 'app-body' });
+  const title = el('div', { class: 'app-title' });
+  title.append(el('h3', {}, app.name));
+  const meta = el('div', { class: 'meta' });
+  const host = open && hostOf(app);
+  if (app.category) meta.append(el('span', { class: 'cat' }, host ? `${app.category} · ` : app.category));
+  if (host) meta.append(el('bdi', {}, host));
+  title.append(meta);
+  body.append(title, el('p', { class: 'desc' }, app.description || ''));
+  root.append(iconFor(app), body);
 
   if (open) {
-    root.append(el('a', { class: 'pill', href: appUrl(app), target: '_blank', rel: 'noopener' }, 'פתח'));
+    root.append(el('span', { class: 'pill', 'aria-hidden': 'true' }, 'פתח'));
   } else {
-    root.append(el('span', { class: 'pill', 'aria-disabled': 'true' }, app.badge || 'לא זמין'));
+    const badge = app.badge || 'לא זמין';
+    root.append(el('span', { class: `badge${badge === 'פרטי' ? ' private' : ''}` }, badge));
   }
-
-  root.append(el('p', { class: 'desc' }, app.description || ''));
   return root;
+}
+
+function topicChip(name) {
+  const label = el('label', { class: 'chip' });
+  label.append(el('input', { type: 'radio', name: 'topic', value: name }), el('span', {}, name));
+  return label;
 }
 
 async function loadApps() {
@@ -53,14 +70,13 @@ async function loadApps() {
 
     openList.replaceChildren(...open.map(row));
     document.getElementById('more-list').replaceChildren(...more.map(row));
-    document.getElementById('count').textContent = apps.length;
-    document.getElementById('n-open').textContent = open.length;
-    document.getElementById('n-more').textContent = more.length;
+    for (const [id, n] of [['n-open', open.length], ['n-open-stat', open.length], ['n-more', more.length], ['n-more-stat', more.length]]) {
+      document.getElementById(id).textContent = n;
+    }
     document.getElementById('apps').hidden = !open.length;
     document.getElementById('more').hidden = !more.length;
 
-    const topic = document.getElementById('topic');
-    for (const a of apps) topic.append(el('option', {}, a.name));
+    document.getElementById('topics').append(...apps.map(a => topicChip(a.name)));
   } catch {
     openList.textContent = 'לא הצלחתי לטעון את רשימת האפליקציות.';
   }
@@ -69,7 +85,7 @@ async function loadApps() {
 function setupForm() {
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
-  const button = form.querySelector('button');
+  const button = form.querySelector('button[type=submit]');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();

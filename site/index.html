@@ -10,8 +10,8 @@
   <meta property="og:url" content="https://jacob-apps.co.il/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://jacob-apps.co.il/profile.jpg">
-  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f3f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0e0d" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,63 +21,79 @@
 <body>
   <div class="cover" aria-hidden="true"></div>
 
-  <div class="wrap">
-    <header class="profile">
-      <picture class="avatar">
-        <source srcset="profile.webp" type="image/webp">
-        <img src="profile.jpg" alt="יעקב" width="400" height="400">
-      </picture>
-      <div class="who">
-        <h1>יעקב</h1>
-        <div class="sub">מפתח · <span id="count">0</span> אפליקציות</div>
+  <div class="wrap layout">
+    <div class="main">
+      <header class="profile">
+        <picture class="avatar">
+          <source srcset="profile.webp" type="image/webp">
+          <img src="profile.jpg" alt="יעקב" width="400" height="400">
+        </picture>
+        <div class="who">
+          <h1>יעקב</h1>
+          <div class="sub">בונה אפליקציות קטנות לחיים האמיתיים</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#contact">שלח הודעה</a>
+          <a class="btn btn-soft" href="https://www.instagram.com/jacobyamin_/" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+            אינסטגרם
+          </a>
+        </div>
+      </header>
+
+      <div class="intro">
+        <p class="bio">אפליקציות שפותרות בעיות אמיתיות, בשבילי ובשביל אנשים סביבי. כל אחת בכתובת משלה תחת <bdi>jacob-apps.co.il</bdi>.</p>
+        <div class="stats">
+          <div><b id="n-open-stat">0</b><span>זמינות עכשיו</span></div>
+          <div><b id="n-more-stat">0</b><span>בדרך</span></div>
+        </div>
       </div>
-    </header>
-    <p class="bio">אני בונה אפליקציות קטנות שפותרות בעיות אמיתיות, בשבילי ובשביל אנשים סביבי. כל אחת יושבת בכתובת משלה תחת <bdi>jacob-apps.co.il</bdi>.</p>
-    <div class="actions">
-      <a class="pill" href="#contact">שלח הודעה</a>
-      <a class="pill pill-soft" href="https://www.instagram.com/jacobyamin_/" target="_blank" rel="noopener">Instagram</a>
+
+      <main>
+        <section class="group" id="apps">
+          <h2>זמינות עכשיו <span class="count" id="n-open"></span></h2>
+          <div class="list" id="open-list" aria-live="polite"></div>
+        </section>
+
+        <section class="group" id="more">
+          <h2>בדרך <span class="count" id="n-more"></span></h2>
+          <div class="list list-compact" id="more-list"></div>
+        </section>
+      </main>
     </div>
 
-    <main>
-      <section class="group" id="apps">
-        <h2>זמינות עכשיו <small id="n-open"></small></h2>
-        <div class="list" id="open-list" aria-live="polite"></div>
-      </section>
-
-      <section class="group" id="more">
-        <h2>בקרוב ועוד <small id="n-more"></small></h2>
-        <div class="list" id="more-list"></div>
-      </section>
-
-      <section class="contact" id="contact">
-        <h2>שלח לי הודעה</h2>
-        <p class="muted">רעיון, באג או סתם שלום. ההודעה מגיעה אליי ישירות.</p>
-        <form id="contact-form" class="form" novalidate>
-          <div class="row2">
-            <label>שם
-              <input name="name" maxlength="80" required autocomplete="name">
-            </label>
-            <label>איך לחזור אליך
-              <input name="reply" maxlength="120" autocomplete="email" placeholder="מייל או טלפון">
-            </label>
+    <aside class="contact" id="contact">
+      <h2>שלח לי הודעה</h2>
+      <p class="muted">רעיון, באג או סתם שלום. מגיע אליי ישירות.</p>
+      <form id="contact-form" class="form" novalidate>
+        <label>ההודעה שלך
+          <textarea name="message" rows="4" maxlength="2000" required placeholder="מה רצית לספר לי?"></textarea>
+        </label>
+        <div class="row2">
+          <label>שם
+            <input name="name" maxlength="80" required autocomplete="name">
+          </label>
+          <label>איך לחזור אליך
+            <input name="reply" maxlength="120" autocomplete="email" placeholder="מייל או טלפון">
+          </label>
+        </div>
+        <fieldset class="topics">
+          <legend>על מה?</legend>
+          <div class="chips" id="topics">
+            <label class="chip"><input type="radio" name="topic" value="כללי" checked><span>כללי</span></label>
           </div>
-          <label>נושא
-            <select name="topic" id="topic"><option>כללי</option></select>
-          </label>
-          <label>הודעה
-            <textarea name="message" rows="5" maxlength="2000" required></textarea>
-          </label>
-          <label class="hp" aria-hidden="true">אתר
-            <input name="website" tabindex="-1" autocomplete="off">
-          </label>
-          <button class="btn" type="submit">שליחה</button>
-          <p id="form-status" class="form-status" role="status"></p>
-        </form>
-      </section>
-    </main>
-
-    <footer class="footer">© <span id="year"></span> jacob-apps.co.il</footer>
+        </fieldset>
+        <label class="hp" aria-hidden="true">אתר
+          <input name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <button class="btn btn-block" type="submit">שליחה</button>
+        <p id="form-status" class="form-status" role="status"></p>
+        <p class="alt">או באינסטגרם <a href="https://www.instagram.com/jacobyamin_/" target="_blank" rel="noopener"><bdi>@jacobyamin_</bdi></a></p>
+      </form>
+    </aside>
   </div>
+
+  <footer class="wrap footer">© <span id="year"></span> jacob-apps.co.il</footer>
 
   <script src="app.js"></script>
 </body>
