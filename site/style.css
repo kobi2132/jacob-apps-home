@@ -65,15 +65,16 @@ a:hover { color: var(--accent-hover); }
 .muted { color: var(--muted); }
 bdi { white-space: nowrap; }
 
-/* Cover: a blurred crop of the profile photo, so the colors match it */
-.cover { position: relative; height: 120px; overflow: hidden; background: var(--cover); }
-.cover::before {
-  content: ""; position: absolute; inset: -40px;
-  background: url(profile.webp) center 35% / cover;
-  filter: blur(26px) saturate(1.25);
-  opacity: .9;
+/* Cover: sunset landscape from the same series as the profile picture */
+.cover {
+  height: 140px;
+  background-color: var(--cover);
+  background-image: url(cover-1000.jpg);
+  background-image: image-set(url(cover-1000.webp) type("image/webp"), url(cover-1000.jpg) type("image/jpeg"));
+  background-size: cover;
+  background-position: center 55%;
 }
-@media (prefers-color-scheme: dark) { .cover::before { opacity: .55; } }
+@media (prefers-color-scheme: dark) { .cover { filter: brightness(.8); } }
 
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px; }
 
@@ -193,8 +194,11 @@ a.app:hover .pill { background: var(--accent); color: var(--accent-text); }
 
 /* Desktop: apps on one side, contact form beside them */
 @media (min-width: 900px) {
-  .cover { height: 190px; }
-  .cover::before { inset: -60px; filter: blur(36px) saturate(1.25); }
+  .cover {
+    height: 240px;
+    background-image: url(cover-2000.jpg);
+    background-image: image-set(url(cover-2000.webp) type("image/webp"), url(cover-2000.jpg) type("image/jpeg"));
+  }
   .wrap { padding: 0 40px; }
   .layout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; align-items: start; }
   .profile { margin-top: -64px; column-gap: 22px; row-gap: 12px; }
