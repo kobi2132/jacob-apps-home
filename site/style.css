@@ -1,3 +1,4 @@
+[hidden] { display: none !important; }
 :root {
   --bg: #f5f3f0;
   --card: #ffffff;
@@ -116,6 +117,7 @@ bdi { white-space: nowrap; }
 .stats span { font-size: .82rem; color: var(--muted); }
 
 .group h2 { display: flex; align-items: center; gap: 8px; margin: 30px 4px 10px; font-size: 1.25rem; font-weight: 800; }
+.group-note { margin: -4px 4px 10px; font-size: .85rem; color: var(--muted); }
 .count { font-size: .8rem; font-weight: 700; color: var(--text-2); background: var(--chip); border-radius: 999px; padding: 0 9px; }
 .list { background: var(--card); border-radius: 18px; overflow: hidden; }
 
@@ -215,6 +217,7 @@ a.app:hover .pill { background: var(--accent); color: var(--accent-text); }
   .stats > div + div { padding-inline-start: 24px; }
   .stats b { font-size: 1.6rem; }
   .group h2 { font-size: 1.4rem; margin-top: 36px; }
+  .group-note { font-size: .9rem; }
   .list { border-radius: 20px; }
   .app { gap: 18px; padding: 18px 20px; }
   .app + .app::before { right: 102px; }

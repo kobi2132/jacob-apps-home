@@ -24,6 +24,10 @@ function isOpen(app) {
   return app.status === 'active' && !!appUrl(app);
 }
 
+function isPrivate(app) {
+  return !isOpen(app) && app.badge === 'פרטי';
+}
+
 function hostOf(app) {
   try { return new URL(appUrl(app)).host; } catch { return ''; }
 }
@@ -66,15 +70,19 @@ async function loadApps() {
     const res = await fetch('apps.json', { cache: 'no-cache' });
     const apps = (await res.json()).filter(a => a.status !== 'hidden');
     const open = apps.filter(isOpen);
-    const more = apps.filter(a => !isOpen(a));
+    const priv = apps.filter(isPrivate);
+    const more = apps.filter(a => !isOpen(a) && !isPrivate(a));
 
     openList.replaceChildren(...open.map(row));
+    document.getElementById('private-list').replaceChildren(...priv.map(row));
     document.getElementById('more-list').replaceChildren(...more.map(row));
-    for (const [id, n] of [['n-open', open.length], ['n-open-stat', open.length], ['n-more', more.length], ['n-more-stat', more.length]]) {
-      document.getElementById(id).textContent = n;
+    for (const [key, list] of [['open', open], ['private', priv], ['more', more]]) {
+      document.getElementById(`n-${key}`).textContent = list.length;
+      document.getElementById(`n-${key}-stat`).textContent = list.length;
     }
     document.getElementById('apps').hidden = !open.length;
-    document.getElementById('more').hidden = !more.length;
+    document.getElementById('private').hidden = document.getElementById('private-stat').hidden = !priv.length;
+    document.getElementById('more').hidden = document.getElementById('more-stat').hidden = !more.length;
 
     document.getElementById('topics').append(...apps.map(a => topicChip(a.name)));
   } catch {
