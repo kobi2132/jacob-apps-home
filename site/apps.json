@@ -32,6 +32,14 @@
     "icon": "https://turkli.jacob-apps.co.il/icon-512.png"
   },
   {
+    "name": "יעקוביות",
+    "subdomain": "yakubiyot",
+    "description": "משחק קוביות לחברים: 2 עד 8 שחקנים על טלפון אחד, והלוח מוצג בטלוויזיה. לאנדרואיד.",
+    "category": "משחק",
+    "status": "active",
+    "icon": "https://yakubiyot.jacob-apps.co.il/assets/icon-512.png"
+  },
+  {
     "name": "הטיול לפיליפינים",
     "url": "https://kobi2132.github.io/philippines-trip/",
     "description": "כל מה שצריך לטיול בפיליפינים: טיסות, מלונות, מעברים והמלצות לכל יום, גם בלי אינטרנט.",
