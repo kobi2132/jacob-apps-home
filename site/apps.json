@@ -21,7 +21,8 @@
     "description": "זימון תורים אונליין לקוסמטיקאית: הלקוחות קובעות תור, והיא מנהלת את היומן.",
     "category": "כלי עבודה",
     "status": "display",
-    "badge": "בקרוב"
+    "badge": "פרטי",
+    "icon": "https://tarpi.jacob-apps.co.il/icon-512.png"
   },
   {
     "name": "turkLi טורקית מדוברת",
