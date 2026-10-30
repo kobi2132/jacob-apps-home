@@ -45,7 +45,8 @@
         <p class="bio">אפליקציות שפותרות בעיות אמיתיות, בשבילי ובשביל אנשים סביבי. כל אחת בכתובת משלה תחת <bdi>jacob-apps.co.il</bdi>.</p>
         <div class="stats">
           <div><b id="n-open-stat">0</b><span>זמינות עכשיו</span></div>
-          <div><b id="n-more-stat">0</b><span>בדרך</span></div>
+          <div id="private-stat"><b id="n-private-stat">0</b><span>פרטיות</span></div>
+          <div id="more-stat"><b id="n-more-stat">0</b><span>בדרך</span></div>
         </div>
       </div>
 
@@ -53,6 +54,12 @@
         <section class="group" id="apps">
           <h2>זמינות עכשיו <span class="count" id="n-open"></span></h2>
           <div class="list" id="open-list" aria-live="polite"></div>
+        </section>
+
+        <section class="group" id="private">
+          <h2>פרטיות <span class="count" id="n-private"></span></h2>
+          <p class="group-note">בניתי אותן לעצמי או ללקוח, ולכן הן לא פתוחות לציבור.</p>
+          <div class="list list-compact" id="private-list"></div>
         </section>
 
         <section class="group" id="more">
