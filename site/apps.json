@@ -42,6 +42,15 @@
     "icon": "https://yakubiyot.jacob-apps.co.il/assets/icon-512.png"
   },
   {
+    "name": "My Vinyl Library",
+    "subdomain": "my-vinyl-library",
+    "description": "ספריית התקליטים שלי: סורקים ברקוד של תקליט והוא נכנס לאוסף עם כל הפרטים. האוסף נשמר בגוגל דרייב שלך.",
+    "category": "מוזיקה",
+    "status": "display",
+    "badge": "בקרוב",
+    "icon": "https://my-vinyl-library.jacob-apps.co.il/icon-512.png"
+  },
+  {
     "name": "הטיול שלי",
     "url": "https://kobi2132.github.io/philippines-trip/",
     "description": "אפליקציה שמלווה אותך לאורך הטיול עם כל מה שחשוב: טיסות, לינה, מסלול יומי והמלצות, גם בלי אינטרנט.",
