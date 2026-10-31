@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
   <div class="cover" aria-hidden="true"></div>
@@ -45,8 +45,8 @@
         <p class="bio">אפליקציות שפותרות בעיות אמיתיות, בשבילי ובשביל אנשים סביבי. כל אחת בכתובת משלה תחת <bdi>jacob-apps.co.il</bdi>.</p>
         <div class="stats">
           <div><b id="n-open-stat">0</b><span>זמינות עכשיו</span></div>
-          <div id="private-stat"><b id="n-private-stat">0</b><span>פרטיות</span></div>
           <div id="more-stat"><b id="n-more-stat">0</b><span>בדרך</span></div>
+          <div id="private-stat"><b id="n-private-stat">0</b><span>פרטיות</span></div>
         </div>
       </div>
 
@@ -56,15 +56,15 @@
           <div class="list" id="open-list" aria-live="polite"></div>
         </section>
 
+        <section class="group" id="more">
+          <h2>בדרך <span class="count" id="n-more"></span></h2>
+          <div class="list list-compact" id="more-list"></div>
+        </section>
+
         <section class="group" id="private">
           <h2>פרטיות <span class="count" id="n-private"></span></h2>
           <p class="group-note">בניתי אותן לעצמי או ללקוח, ולכן הן לא פתוחות לציבור.</p>
           <div class="list list-compact" id="private-list"></div>
-        </section>
-
-        <section class="group" id="more">
-          <h2>בדרך <span class="count" id="n-more"></span></h2>
-          <div class="list list-compact" id="more-list"></div>
         </section>
       </main>
     </div>
@@ -102,6 +102,6 @@
 
   <footer class="wrap footer">© <span id="year"></span> jacob-apps.co.il</footer>
 
-  <script src="app.js?v=12"></script>
+  <script src="app.js?v=13"></script>
 </body>
 </html>
