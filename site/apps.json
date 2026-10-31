@@ -35,9 +35,10 @@
   {
     "name": "יעקוביות",
     "subdomain": "yakubiyot",
-    "description": "משחק קוביות בסגנון קילר: 2 עד 8 שחקנים על טלפון אחד, והלוח מוצג בטלוויזיה. כרגע לאנדרואיד בלבד.",
+    "description": "משחק קוביות בסגנון קילר: 2 עד 8 שחקנים על טלפון אחד, והלוח מוצג בטלוויזיה. בקרוב בחנות Google Play.",
     "category": "משחק",
-    "status": "active",
+    "status": "display",
+    "badge": "בקרוב",
     "icon": "https://yakubiyot.jacob-apps.co.il/assets/icon-512.png"
   },
   {
