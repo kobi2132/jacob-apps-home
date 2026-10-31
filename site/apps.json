@@ -42,9 +42,9 @@
     "icon": "https://yakubiyot.jacob-apps.co.il/assets/icon-512.png"
   },
   {
-    "name": "הטיול לפיליפינים",
+    "name": "הטיול שלי",
     "url": "https://kobi2132.github.io/philippines-trip/",
-    "description": "כל מה שצריך לטיול בפיליפינים: טיסות, מלונות, מעברים והמלצות לכל יום, גם בלי אינטרנט.",
+    "description": "אפליקציה שמלווה אותך לאורך הטיול עם כל מה שחשוב: טיסות, לינה, מסלול יומי והמלצות, גם בלי אינטרנט.",
     "category": "טיולים",
     "status": "display",
     "badge": "פרטי",
