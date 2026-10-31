@@ -147,11 +147,6 @@ a.app:hover .pill { background: var(--accent); color: var(--accent-text); }
   font-weight: 700; font-size: .88rem;
 }
 
-.list-compact .app { gap: 12px; padding: 12px 14px; }
-.list-compact .app + .app::before { right: 70px; }
-.list-compact .app-icon { width: 44px; height: 44px; border-radius: 11px; font-size: 1.25rem; background: var(--off-icon); color: var(--muted); filter: grayscale(.6); }
-.list-compact h3 { font-size: 1rem; }
-.list-compact .desc { color: var(--muted); font-size: .82rem; -webkit-line-clamp: 1; }
 .badge { flex: none; padding: 2px 10px; border-radius: 999px; font-weight: 700; font-size: .82rem; background: var(--soon-bg); color: var(--soon-text); }
 .badge.private { background: var(--private-bg); color: var(--private-text); }
 
@@ -225,11 +220,6 @@ a.app:hover .pill { background: var(--accent); color: var(--accent-text); }
   .app-title { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
   .app h3 { font-size: 1.12rem; }
   .app .desc { font-size: .95rem; -webkit-line-clamp: 3; }
-  .list-compact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; background: none; border-radius: 0; }
-  .list-compact .app { background: var(--card); border-radius: 16px; padding: 14px 16px; }
-  .list-compact .app + .app::before { display: none; }
-  .list-compact .app-icon { width: 44px; height: 44px; font-size: 1.25rem; }
-  .list-compact .desc { font-size: .85rem; -webkit-line-clamp: 2; }
   .contact { margin-top: 32px; padding: 24px; border-radius: 20px; position: sticky; top: 24px; box-shadow: 0 10px 30px rgba(60, 40, 20, .08); }
   .contact .row2 { grid-template-columns: 1fr; }
 }
