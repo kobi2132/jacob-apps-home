@@ -46,8 +46,7 @@
     "subdomain": "my-vinyl-library",
     "description": "ספריית התקליטים שלי: סורקים ברקוד של תקליט והוא נכנס לאוסף עם כל הפרטים. האוסף נשמר בגוגל דרייב שלך.",
     "category": "מוזיקה",
-    "status": "display",
-    "badge": "בקרוב",
+    "status": "active",
     "icon": "icons/my-vinyl-library.png"
   },
   {
